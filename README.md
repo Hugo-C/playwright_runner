@@ -4,6 +4,18 @@
 )](https://hub.docker.com/r/hugocker/playwright_runner) 
 [![Docker publish](https://github.com/Hugo-C/playwright_runner/actions/workflows/docker-publish.yml/badge.svg)](https://github.com/Hugo-C/playwright_runner/actions/workflows/docker-publish.yml)
 
-Playwright with pytest runner bundled in a reusable image.
+Playwright with pytest and standard browsers bundled in a reusable image.
 
-TODO add typical docker-compose
+---
+
+Typical docker-compose should look like:
+```
+  playwright_runner:
+    image: hugocker/playwright_runner
+    volumes:
+      - ./tests:/code/tests
+    depends_on:
+      - gui_service
+```
+
+See [jarm-online repo](https://github.com/Hugo-C/jarm-online/blob/master/docker-compose.playwright.yml) for a complete example.
