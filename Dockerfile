@@ -1,4 +1,4 @@
-FROM python:3.11
+FROM mcr.microsoft.com/playwright/python:v1.46.0
 
 RUN pip install --upgrade pip
 
@@ -8,6 +8,6 @@ ADD ./requirements.txt /code/requirements.txt
 
 RUN pip install -r requirements.txt
 
-RUN playwright install && playwright install-deps
+RUN playwright install --with-deps
 
 ENTRYPOINT ["pytest"]
