@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/playwright/python:v1.46.0
+FROM mcr.microsoft.com/playwright/python:v1.57.0
 
 RUN pip install --upgrade pip
 
